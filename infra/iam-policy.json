@@ -1,1 +1,67 @@
-
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "ReadRawBucketObjects",
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::oe-data-platform-raw-use1/*"
+			]
+		},
+		{
+			"Sid": "WriteProcessedBucketObjects",
+			"Effect": "Allow",
+			"Action": [
+				"s3:PutObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::oe-data-platform-processed-use1/*"
+			]
+		},
+		{
+			"Sid": "DynamoDBWriteMetadata",
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:PutItem",
+				"dynamodb:UpdateItem"
+			],
+			"Resource": [
+				"arn:aws:dynamodb:us-east-1:127769090275:table/oe-data-platform-events"
+			]
+		},
+		{
+			"Sid": "QuarantineBadObjectsInRawBucket",
+			"Effect": "Allow",
+			"Action": [
+				"s3:PutObject",
+				"s3:DeleteObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::oe-data-platform-raw-use1/quarantine/*"
+			]
+		},
+		{
+			"Sid": "DeleteBadObjectsFromRawBucket",
+			"Effect": "Allow",
+			"Action": [
+				"s3:DeleteObject"
+			],
+			"Resource": [
+				"arn:aws:s3:::oe-data-platform-raw-use1/*"
+			]
+		},
+		{
+			"Sid": "ListRawBucket",
+			"Effect": "Allow",
+			"Action": [
+				"s3:ListBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::oe-data-platform-raw-use1"
+			]
+		}
+	]
+}
