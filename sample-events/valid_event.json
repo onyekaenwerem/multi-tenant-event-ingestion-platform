@@ -1,1 +1,7 @@
-
+{
+  "tenant_id": "test",
+  "event_type": "test",
+  "timestamp": "2026-02-09T01:10:00Z",
+  "value": 123,
+  "event_id": "event-valid-001"
+}
