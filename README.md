@@ -1,7 +1,12 @@
 # Multi-Tenant Event-Driven Data Ingestion Platform (AWS Serverless)
 
-**Architecture:** S3 (raw) → Lambda (processor) → DynamoDB (metadata) → S3 (processed)  
+**Architecture:** S3 (raw) → Lambda (processor) → DynamoDB (metadata) → S3 (processed)
+
 **Failure handling:** invalid JSON is quarantined in S3 and recorded in DynamoDB
+
+## Architecture
+![Architecture](diagrams/architecture.png)
+
 
 ## Why this exists
 A reference architecture demonstrating multi-tenant ingestion, event-driven processing, metadata indexing, and operational failure handling under AWS Free Tier constraints.
@@ -36,7 +41,7 @@ Verify:
 - Invalid files move to `quarantine/` with a failure record
 
 ## System design doc
-(Insert your Notion/Google Doc link here)
+https://www.notion.so/Designing-a-Multi-Tenant-Event-Driven-Data-Ingestion-Platform-AWS-303ba72b40de80e5a1fed650f11062db?source=copy_link)
 
 ## Next upgrades (optional)
 - Idempotency (prevent duplicate processing on retries)
