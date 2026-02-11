@@ -6,7 +6,6 @@
 
 ## Architecture
 ![Architecture](diagrams/architecture.drawio.png)
-diagrams/architecture.drawio.png
 
 
 ## Why this exists
