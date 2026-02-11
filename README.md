@@ -28,6 +28,11 @@ DynamoDB uses a composite key:
 - Partition key: `tenant_id`
 - Sort key: `event_id`
 
+## Operational behaviors
+- **Idempotency:** DynamoDB conditional write prevents duplicate processing for (tenant_id, event_id)
+- **Bad input handling:** invalid JSON is quarantined to `quarantine/` and recorded in DynamoDB with `status=failed_json_parse`
+- **Auditability:** DynamoDB records store raw_key, processed_at, and quarantine_key (when applicable)
+
 ## How to test
 Upload a valid event:
 - `sample-events/valid_event.json` → raw bucket path: `tenant_id=test/...`
