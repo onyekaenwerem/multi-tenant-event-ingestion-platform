@@ -5,7 +5,8 @@
 **Failure handling:** invalid JSON is quarantined in S3 and recorded in DynamoDB
 
 ## Architecture
-![Architecture](diagrams/architecture.png)
+![Architecture](diagrams/architecture.drawio.png)
+diagrams/architecture.drawio.png
 
 
 ## Why this exists
